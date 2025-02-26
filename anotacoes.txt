@@ -1,0 +1,23 @@
+formas de escrever e mostrar array no PHP
+
+$pessoa = array("Maria", 25, 1.69, 47.8, true)
+$pessoa[0] = Maria
+
+for ($x = 0; $x <= 4; $x++)
+{
+	echo "[$pessoa[$x]]<br>"
+}
+
+foraech ($pessoa as $dado)
+{
+	echo "$dado<br>"
+}
+
+se precisar do índice
+
+foreach($pessoa as $indice => $dado)
+{
+	echo "$indice : $dado<br>";
+}
+
+
