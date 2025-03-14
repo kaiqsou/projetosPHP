@@ -1,0 +1,2 @@
+5. Tabela de Produtos (Array nomeado)
+Crie um array nomeado onde a chave é o nome de um produto e o valor é seu preço. Exiba os produtos em uma tabela HTML.

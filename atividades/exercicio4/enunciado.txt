@@ -1,0 +1,2 @@
+4. Matriz 2x2 Estática
+Crie uma matriz 2x2 e exiba seus valores em uma tabela HTML, usando comando for.

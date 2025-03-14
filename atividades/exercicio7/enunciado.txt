@@ -1,0 +1,2 @@
+7. Copiar os Elementos de um Vetor para Outro
+Crie um vetor com 4 números e copie cada valor manualmente para um segundo vetor.

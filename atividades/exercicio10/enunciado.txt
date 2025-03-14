@@ -1,0 +1,2 @@
+10. Criar uma Agenda Simples
+Crie uma matriz nomeada para armazenar 3 contatos (nome, telefone e e-mail) e exiba os dados acessando os índices diretamente.

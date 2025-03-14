@@ -1,0 +1,2 @@
+8. Exibir a Diagonal Principal de uma Matriz 3x3
+Crie uma matriz 3x3 fixa e exiba apenas os números da diagonal principal (onde o índice da linha é igual ao da coluna).

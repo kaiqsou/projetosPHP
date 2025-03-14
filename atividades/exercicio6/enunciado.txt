@@ -1,0 +1,2 @@
+6. Média de Notas dos Alunos
+Armazene as notas de 2 alunos (cada um com 3 notas) e exiba a média de cada um.

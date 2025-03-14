@@ -1,0 +1,2 @@
+3. Ordenação Manual de um Vetor
+Crie um vetor de 3 números e ordene-os manualmente (sem usar sort()), comparando e trocando os valores, se necessário.

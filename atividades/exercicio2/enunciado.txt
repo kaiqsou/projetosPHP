@@ -1,0 +1,2 @@
+2. Somar Elementos de um Vetor
+Crie um vetor com 5 números inteiros e some manualmente os valores acessando cada índice diretamente.
