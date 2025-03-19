@@ -15,6 +15,6 @@
 		echo "$enumerador"."º número: $numeros[$i] <br>";
 	}
 	
-	echo "Somando os números $numeros[0], $numeros[1], $numeros[2], $numeros[3], $numeros[4] teremos: $soma"
+	echo "Somando os números $numeros[0], $numeros[1], $numeros[2], $numeros[3] e $numeros[4] teremos: $soma"
 
 ?>

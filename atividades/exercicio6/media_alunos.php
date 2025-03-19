@@ -7,13 +7,28 @@ Armazene as notas de 2 alunos (cada um com 3 notas) e exiba a média de cada um.
 
 */
 
-$alunos = array
+	$alunos = array
 		(
 		array("kaique", 10, 10, 10),
 		array("xiao", 5, 5, 5)
 		);
+	
+	foreach($alunos as $vet)
+	{
+		$media = 0;
+		foreach($vet as $ind => $nota)
+		{
+			if($ind != 0)
+			{
+				$media += $nota;
+			}
+			else $nome = $nota;
+			
+		}
+		$media = $media / 3;
+		echo "A média de $nome é $media<br><br>";
+	}
 		
-$media = array(0, 0);
 		
 	echo "Aluno 1: {$alunos[0][0]} <br> Notas: {$alunos[0][1]}, {$alunos[0][2]} e {$alunos[0][3]} <br>";
 	echo "Média: ". ($alunos[0][1] + $alunos[0][2] + $alunos[0][3]) / 3 ."<br><br>";

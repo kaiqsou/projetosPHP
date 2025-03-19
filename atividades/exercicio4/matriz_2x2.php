@@ -17,6 +17,7 @@ Crie uma matriz 2x2 e exiba seus valores em uma tabela HTML, usando comando for.
 	</head>
 
 	<body>
+		<table border="1">
 		<h3>Matriz 2x2 Estática</h3>
 			<?php
 			
@@ -34,6 +35,20 @@ Crie uma matriz 2x2 e exiba seus valores em uma tabela HTML, usando comando for.
 					}
 					echo "<br>";
 				}
+				
+				/* outra resolução */
+				
+				foreach($matriz as $vetor)
+				{
+					echo "<tr>";
+					foreach($vetor as $dado)
+					{
+						echo "<td>{$dado}</td>";
+						echo "<br> ";
+					}
+					echo "</tr>";
+				}
 			?>
+		</table>
 	</body>
 </html>
