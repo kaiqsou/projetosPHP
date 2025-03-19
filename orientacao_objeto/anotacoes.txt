@@ -1,0 +1,13 @@
+	ORIENTAÇÃO A OBJETO
+	- a orientação a objeto é uma forma de desenvolver softwares	
+	- objetos são encontrados nos requisitos
+	- objetos são tipos de variáveis armazenadas na memória RAM
+	
+	CLASSES: modelos para criar os objetos
+	- todos os objetos criados a partir de uma classe, terá o mesmo formato
+	
+	Entidade CLIENTE
+	Atributos: nome, CPF, etc.
+	Métodos: login() senha()
+	
+	
