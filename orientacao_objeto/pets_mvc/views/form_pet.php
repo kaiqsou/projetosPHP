@@ -4,6 +4,11 @@
 	
 	$msg = array("", "", "", "");
 	$erro = false;
+	$mostrarResultado = false;
+	$nome = '';
+    $idade = '';
+    $cor = '';
+    $raca = '0';
 	
 	if($_POST)
 	{
@@ -41,13 +46,20 @@
 				$_POST["raca"]
 			);
 			
-			//mostrar os dados
-		echo "Nome: {$pet -> getNome()}<br>";
-		echo "Idade: {$pet -> getIdade()}<br>";
-		echo "Cor: {$pet -> getCor()}<br>";
-		echo "Raça: {$pet -> getRaca()}<br>";
+			$mostrarResultado = true;
+			
+		}
+		
+		if($erro)
+		{
+			$nome = $_POST['nome'];
+			$idade = $_POST['idade'];
+			$cor = $_POST['cor'];
+			$raca = $_POST['raca'];
 		}
 	}
+	
+	
 ?>
 
 <!doctype html>
@@ -57,36 +69,69 @@
 	
 		<title>Pets</title>
 		<meta charset="UTF-8">
+		<style>
+		.erro
+		{
+			color: red;
+			font-size:16px;
+		}
+		</style>
 		
 	</head>
 	
 	<body>
+	<?php if ($mostrarResultado): ?>
+	<?php
+		// mostrar dados/resultado
+		echo "Nome: {$pet -> getNome()}<br>";
+		echo "Idade: {$pet -> getIdade()}<br>";
+		echo "Cor: {$pet -> getCor()}<br>";
+		echo "Raça: {$pet -> getRaca()}<br>";
+		
+		echo "<br><pre>";
+		var_dump($pet);
+		echo "</pre><br>";
+	?>
+		<!-- Botão para voltar -->
+		<button onclick="window.location.href='form_pet.php'">Voltar</button>
+		
+		<!-- Se não houver resultados para exibir, mostrará o formulário (Else) -->
+		<?php else: ?>
+		
 		<h1>Pet</h1>
 		
 		<form action="#" method="post">
+		
 			<label>Nome:</label>
-			<input type="text" name="nome">
-			<div class="erro"></div>
+			<input type="text" name="nome" value=<?php echo $nome ?>>
+			<div class="erro"><?php echo $msg[0] ?></div>
+			<br>
 			
 			<label>Idade:</label>
-			<input type="number" name="idade">
-			<div class="erro"></div>
+			<input type="number" name="idade" value=<?php echo $idade ?>>
+			<div class="erro"><?php echo $msg[1] ?></div>
+			<br>
 			
 			<label>Cor:</label>
-			<input type="text" name="cor">
-			<div class="erro"></div>
+			<input type="text" name="cor" value=<?php echo $cor ?>>
+			<div class="erro"><?php echo $msg[2] ?></div>
+			<br>
 			
 			<label>Raça:</label>
-			<select name="raca">
+			<select name="raca" value=<?php echo $raca ?>>
 				<option value="0">Escolha a raça</option>
 				<option>Pitbull</option>
 				<option>Lhasa</option>
 				<option>Yorkshire</option>
 				<option>Sem raça</option>
 			</select>
-			<div class="erro"></div>
+			<div class="erro"><?php echo $msg[3] ?></div>
+			<br>
+			
 			<input type="submit" value="Cadastrar">
+			
+		</form>
+		<!-- Finalização do if -->
+		<?php endif; ?>
 	</body>
-	
 </html>
-

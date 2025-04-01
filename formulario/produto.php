@@ -50,6 +50,7 @@
 		
 			<label for="codigo">Código:</label>
 			<input type="text" name="codigo">
+			
 			<div class="erro"><?php echo $msg[0];?></div>
 			<br><br>
 			
