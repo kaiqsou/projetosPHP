@@ -1,0 +1,39 @@
+Relacionamentos entre classes
+
+- Herança
+- Associação -> pode ser bilatural ou unilatural
+	tipos:
+	1. classe associativa
+	2. agregação
+	3. composição
+- Dependência -> notação
+
+Quando usar herança?
+
+			    2 CLASSES
+
+				Original:
+
+ContaCorrente				ContaPoupanca
+agencia						agencia
+conta						conta
+limite						aniversario
+saldo						saldo
+
+			  Com Herança:
+			  
+	ContaCorrente				ContaPoupanca					
+	limite						aniversario
+						
+
+	    |						    |
+	    |						    |
+		|		  Conta 			|
+		 --->	  agencia		<---
+				  conta
+				  saldo
+				Genérica/Pai
+
+Polimorfismo -> algo que pode assumir várias formas
+
+# Uma classe não pode ter dois pais no PhP.
