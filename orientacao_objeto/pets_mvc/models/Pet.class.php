@@ -7,12 +7,18 @@
 			private string $nome = "",
 			private int $idade = 0,
 			private string $cor = "",
-			private string $raca = ""
+			private string $raca = "",
+			private $usuario = null
 		){}
 		
 		// métodos get e set são necessários quando os atributos são privados
 		
 		// métodos get
+		public function getUsuario()
+		{
+			return $this -> usuario;
+		}
+		
 		public function getNome()
 		{
 			return $this -> nome;

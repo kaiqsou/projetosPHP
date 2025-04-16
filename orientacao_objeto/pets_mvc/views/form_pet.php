@@ -1,5 +1,8 @@
 <?php
 
+	require_once "../models/Conexao.class.php";
+	require_once "../models/petDAO.class.php";
+	require_once "../models/Usuario.class.php";
 	require_once "../models/Pet.class.php";
 	
 	$msg = array("", "", "", "");
@@ -38,16 +41,18 @@
 		
 		if(!$erro)
 		{
+			$usuario = new Usuario();
 			$pet = new Pet
 			(
 				$_POST["nome"],
 				$_POST["idade"],
 				$_POST["cor"],
-				$_POST["raca"]
+				$_POST["raca"],
+				$usuario
 			);
-			
+			$petDAO = new petDAO();
 			$mostrarResultado = true;
-			
+			$retorno = $petDAO -> inserir($pet);
 		}
 		
 		if($erro)

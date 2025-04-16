@@ -24,6 +24,40 @@
 	validarCpf()			conexao()	-> abrir conexão com o banco
 	
 	
+	Associação 
+	- É estrutural
+	- Não há herança de atributos de outras classes (Ex: Produto e Fornecedor)
+	- Os atributos das associações são diferentes
+	- Em caso de n:n, não é criado uma outra tabela
+	- Lado bilateral ou unilateral
+	
+	Multiplicidade:
+	0...n -> produto pode ter NENHUM ou VÁRIOS fornecedores
+	1...n -> produto precisa no mínimo de UM fornecedor e o máximo são vários
+	n 
+	n:m
+	____________________________________________________________________________________
+	RELAÇÂO: 1----N Bilateral (produto vai pra fornecedor e fornecedor vai para produto)
+	
+	[Produto]
+	nome 
+	preco 
+	fornecedor[] = array obj tipo fornecedor, por ser vários fornecedores
+	
+	[Fornecedores]
+	CNPJ
+	razaoSocial
+	produto = obj produto (único
+	____________________________________________________________________________________
+	RELAÇÂO: 1----N Unilateral (usuario vai pra pet mas pet não vai para usuario)
+	obs: sempre passa apenas o objeto da seta (>) até o outro lado
+	
+	[Pet]						[Usuario]
+	nome 		n -------> 1	nome
+	preco 						idade
+	usuario
+	
+	nesse caso, o 
 	
 	
 	
