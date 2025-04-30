@@ -1,0 +1,17 @@
+Classe associativa
+
+- Relação N:N aqui não precisa criar uma nova tabela, diferentemente dos conceitos
+do Banco de Dados
+
+		 Relação: FORNECIMENTO
+[Produto]					[Fornecedor]
+Nome						CNPJ
+Preço	    n <---> n		site
+				|
+				|
+				|
+		   [Fornecimento] 			-> classe surgiu pela necessidade de um
+			DataFornecimento 		atributo no relacionamento, não por ser N:N
+			Produto
+			Fornecedor
+			
