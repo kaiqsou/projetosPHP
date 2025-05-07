@@ -1,21 +1,20 @@
 <?php
 
-class Tecnico extends Pessoa
+class Hospede extends Pessoa
 {
 	public function __construct
 	(
-		private string $especialidade = "",
+		private string $cpf = "",
 		string $nome
-	) 
+	)
 	{
 		parent :: __construct($nome);
 	}
-
-
+	
 	// métodos GET
-	public function getEspecialidade()
+	public function getCpf()
 	{
-		return $this -> especialidade;
+		return $this -> cpf;
 	}
 	
 	public function getNome()
@@ -24,9 +23,9 @@ class Tecnico extends Pessoa
 	}
 	
 	// métodos SET
-	public function setEspecialidade()
+	public function setCpf()
 	{
-		$this -> especialidade = $especialidade;
+		$this -> cpf = $cpf;
 	}
 	
 	public function setNome()
@@ -34,5 +33,5 @@ class Tecnico extends Pessoa
 		$this -> nome = $nome;
 	}
 }
-	
+
 ?>

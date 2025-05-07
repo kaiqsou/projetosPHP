@@ -4,8 +4,7 @@ class Pessoa
 {
 	public function __construct
 	(
-		protected string $nome = "",
-		private $telefone = null
+		protected string $nome = ""
 	){}
 	
 	// métodos GET
@@ -14,17 +13,11 @@ class Pessoa
 		return $this -> nome;
 	}
 	
-	public function getTelefone()
-	{
-		return $this -> telefone;
-	}
-	
-	// métodos SET
+	// métodos SET 
 	public function setNome()
 	{
 		$this -> nome = $nome;
 	}
-	
 }
 
 ?>

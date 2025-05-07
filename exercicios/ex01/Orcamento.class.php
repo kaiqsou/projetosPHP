@@ -4,36 +4,53 @@ class Orcamento
 {
 	public function __construct
 	(
-		private string data_orcamento = "",
-		private float preco = "",
-		private string data_validade = "",
+		private string $data_orcamento = "",
+		private float $preco = 0.00,
+		private string $data_validade = "",
 		private $aparelho = null,
 		private $tecnico = null
 	) {}
-		
+	
+	// métodos GET
 	public function getDataOrcamento()
 	{
-		$this -> dataOrcamento; // precisa estar igual?
+		return $this -> data_orcamento;
 	}
 	
 	public function getPreco()
 	{
-		$this -> preco;
+		return $this -> preco;
 	}
 	
 	public function getDataValidade()
 	{
-		$this -> dataValidade;
+		return $this -> data_validade;
 	}
 	
 	public function getAparelho()
 	{
-		$this -> aparelho;
+		return $this -> aparelho;
 	}
 	
 	public function getTecnico()
 	{
-		$this -> tecnico;
+		return $this -> tecnico;
+	}
+	
+	// métodos SET
+	public function setDataOrcamento()
+	{
+		$this -> data_orcamento = $data_orcamento;
+	}
+	
+	public function setPreco()
+	{
+		$this -> preco = $preco;
+	}
+	
+	public function setDataValidade()
+	{
+		$this -> data_validade = $data_validade;
 	}
 }
 

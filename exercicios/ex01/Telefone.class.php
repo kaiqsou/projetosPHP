@@ -4,18 +4,30 @@ class Telefone
 {
 	public function __construct
 	(
-		private int ddd = 0,
-		private string numero = ""
+		private int $ddd = 0,
+		private string $numero = ""
 	) {}
-		
+	
+	// métodos GET
 	public function getDdd()
 	{
-		$this -> ddd;
+		return $this -> ddd;
 	}
 		
 	public function getNumero()
 	{
-		$this -> numero;
+		return $this -> numero;
+	}
+	
+	// métodos SET
+	public function setDdd()
+	{
+		$this -> ddd = $ddd;
+	}
+	
+	public function setNumero()
+	{
+		$this -> numero = $numero;
 	}
 }
 

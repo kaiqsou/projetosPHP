@@ -1,4 +1,5 @@
 <?php
+
 	class Usuario
 	{
 		public function __construct
@@ -38,9 +39,6 @@
 		{
 			// vai ser necessário passar o DDD e o Número
 			$this -> celular[] = new Celular($ddd, $numero);
-		}
-		
-		
-		
+		}	
 	}
 ?>
