@@ -1,14 +1,20 @@
 <?php
 
+// por herdar de pessoa, não precisa do getNome()/setNome() e nem do
+// getTelefone()/setTelefone()
+
 class Tecnico extends Pessoa
 {
 	public function __construct
 	(
 		private string $especialidade = "",
-		string $nome
+		private array $aparelho = array(),
+		string $nome,
+		int $ddd,
+		string $numero
 	) 
 	{
-		parent :: __construct($nome);
+		parent :: __construct($nome, $ddd, $numero);
 	}
 
 
@@ -18,20 +24,20 @@ class Tecnico extends Pessoa
 		return $this -> especialidade;
 	}
 	
-	public function getNome()
+	public function getAparelho()
 	{
-		return $this -> nome;
+		return $this -> aparelho;
 	}
 	
 	// métodos SET
-	public function setEspecialidade()
+	public function setEspecialidade($especialidade)
 	{
 		$this -> especialidade = $especialidade;
 	}
 	
-	public function setNome()
+	public function setAparelho($aparelho)
 	{
-		$this -> nome = $nome;
+		$this -> aparelho[] = $aparelho;
 	}
 }
 	

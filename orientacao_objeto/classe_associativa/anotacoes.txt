@@ -15,3 +15,5 @@ Preço	    n <---> n		site
 			Produto
 			Fornecedor
 			
+Na relação de agregação, a classe que está na ponta é quem irá para a outra classe
+Modelo <- Aparelho (Modelo estará dentro de Aparelho)

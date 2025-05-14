@@ -38,19 +38,29 @@ class Orcamento
 	}
 	
 	// métodos SET
-	public function setDataOrcamento()
+	public function setDataOrcamento($data_orcamento)
 	{
 		$this -> data_orcamento = $data_orcamento;
 	}
 	
-	public function setPreco()
+	public function setPreco($preco)
 	{
 		$this -> preco = $preco;
 	}
 	
-	public function setDataValidade()
+	public function setDataValidade($data_validade)
 	{
 		$this -> data_validade = $data_validade;
+	}
+	
+	public function setAparelho($aparelho)
+	{
+		$this -> aparelho = $aparelho;
+	}
+	
+	public function setTecnico($tecnico)
+	{
+		$this -> tecnico = $tecnico;
 	}
 }
 

@@ -6,7 +6,11 @@ class Aparelho
 	(
 		private string $descritivo = "",
 		private $modelo = null,
-		private $cliente = null
+		// tipando exigindo objeto, diferente de cima, que aceita tudo:
+		// private Modelo $modelo = new Modelo(),
+		private $cliente = null,
+		// private Cliente $cliente = new Cliente(),
+		private array $tecnico = array()
 	){}
 	
 	
@@ -26,10 +30,30 @@ class Aparelho
 		return $this -> cliente;
 	}
 	
+	public function getTecnico()
+	{
+		return $this -> tecnico;
+	}
+	
 	// métodos SET
-	public function setDescritivo()
+	public function setDescritivo($descritivo)
 	{
 		$this -> descritivo = $descritivo;
+	}
+	
+	public function setModelo($modelo)
+	{
+		$this -> modelo = $modelo;
+	}
+	
+	public function setCliente($cliente)
+	{
+		$this -> cliente = $cliente;
+	}
+	
+	public function setTecnico($tecnico)
+	{
+		$this -> tecnico[] = $tecnico;
 	}
 }
 

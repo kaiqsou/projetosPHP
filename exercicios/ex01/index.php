@@ -1,35 +1,71 @@
 <?php
 
-	require_once "Telefone.class.php";
+	// se for tipado, a ordem do require é importante
+
+	date_default_timezone_set("America/Sao_Paulo");
 	require_once "Pessoa.class.php";
 	require_once "Cliente.class.php";
 	require_once "Tecnico.class.php";
 	require_once "Aparelho.class.php";
 	require_once "Modelo.class.php";
 	require_once "Orcamento.class.php";
+	require_once "Telefone.class.php";
 	
-	$telefone1 = new Telefone(14, "991144192");
-	$telefone2 = new Telefone(16, "991345962");
+	$modelo = new Modelo("Motorola 4444");
+	$cliente = new Cliente("093.411.091-01", "Kaique", 14, "91144192");
+	$aparelho = new Aparelho("Celular", $modelo, $cliente);
+	$tecnico = new Tecnico("Conserto de celulares",
+	array(), "Marina", 14, "91255769");
+	$tecnico -> setTelefone(14, "32334455");
+	$orcamento = new Orcamento(date("d/m/Y"), 150.60, "20/05/2025", $aparelho, $tecnico);
 	
-	$pessoa1 = new Pessoa("Kaique", $telefone1);
-	$pessoa2 = new Pessoa("Marina", $telefone2);
+	echo "<h1>Orçamento</h1>";
 	
-	$modelo1 = new Modelo("iPhone");
-	$modelo2 = new Modelo("Samsung");
+	echo "Data do Orçamento: 
+	{$orcamento -> getDataOrcamento()} <br>";
 	
-	$cliente = new Cliente("061.121.031-02", $pessoa1 -> getNome());
-	$aparelho = new Aparelho("Celular de 64GB com defeito", $modelo1, $cliente);
-	$tecnico = new Tecnico("Celulares", $pessoa2 -> getNome());
-	$orcamento = new Orcamento("06/05/2025", 135.12, "12/05/2025", $aparelho, $tecnico);
+	echo "Data de Validade: 
+	{$orcamento -> getDataValidade()} <br>";
 	
-	echo "<strong>Cliente:</strong> {$orcamento -> getAparelho() -> getCliente() -> getNome()}<br>";
-	echo "<strong>Data do Orçamento:</strong> {$orcamento -> getDataOrcamento()}<br>";
-	echo "<strong>Data de Validade:</strong> {$orcamento -> getDataValidade()} <br>";
-	echo "<strong>Preço:</strong> {$orcamento -> getPreco()}<br>";
-	echo "<strong>Modelo do Aparelho:</strong> {$orcamento -> getAparelho() -> getModelo() -> getDescritivo()}<br>";
-	echo "<strong>Descrição:</strong> {$orcamento -> getAparelho() -> getDescritivo()} <br>";
-	echo "<br>";
-	echo "<strong>Técnico(a) responsável:</strong> {$orcamento -> getTecnico() -> getNome()}<br>";
-	echo "<strong>Especialidade:</strong> {$orcamento -> getTecnico() -> getEspecialidade()}";
+	echo "Preço: R$ ".
+	number_format($orcamento -> getPreco(), 2, ",", ".")."<br>";
+	
+	echo "<h2>Aparelho</h2>";
+	
+	echo "Aparelho: 
+	{$orcamento -> getAparelho() -> getDescritivo()}<br>";
+	
+	echo "Modelo: 
+	{$orcamento -> getAparelho() -> getModelo() -> getDescritivo()}<br>";
+	
+	echo "<h3>Cliente</h3>";
+	
+	echo "Nome: 
+	{$orcamento -> getAparelho() -> getCliente() -> getNome()}<br>";
+	
+	echo "CPF: 
+	{$orcamento -> getAparelho() -> getCliente() -> getCpf()}<br>";
+	
+	foreach($orcamento -> getAparelho() -> getCliente() -> getTelefone()
+	as $telefone)
+	{
+		echo "({$telefone -> getDdd()}) 
+		{$telefone -> getNumero()}<br>";
+	}
+	
+	echo "<h4>Técnico</h4>";
+	echo "Nome: 
+	{$orcamento -> getTecnico() -> getNome()}<br>";
+	
+	echo "Especialidade: 
+	{$orcamento -> getTecnico() -> getEspecialidade()}<br>";
+	
+	echo "Telefone(s): ";
+	foreach($orcamento -> getTecnico() -> getTelefone()
+	as $telefone)
+	{
+		echo "<br>({$telefone -> getDdd()}) 
+		{$telefone -> getNumero()}";
+	}
 	
 ?>

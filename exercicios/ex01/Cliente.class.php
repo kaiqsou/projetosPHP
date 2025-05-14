@@ -1,14 +1,19 @@
 <?php
 
+// por herdar de pessoa, não precisa do getNome()/setNome() e nem do
+// getTelefone()/setTelefone()
+
 class Cliente extends Pessoa
 {
 	public function __construct
 	(
 		private string $cpf = "",
-		string $nome
+		string $nome,
+		int $ddd,
+		string $numero
 	) 
 	{
-		parent :: __construct($nome);
+		parent :: __construct($nome, $ddd, $numero);
 	}
 	
 	// método GET
@@ -17,20 +22,10 @@ class Cliente extends Pessoa
 		return $this -> cpf;
 	}
 	
-	public function getNome()
-	{
-		return $this -> nome;
-	}
-	
 	// métodos SET
 	public function setCpf()
 	{
 		$this -> cpf = $cpf;
-	}
-	
-	public function setNome()
-	{
-		$this -> nome = $nome;
 	}
 }
 
