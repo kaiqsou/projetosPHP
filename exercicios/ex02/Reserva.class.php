@@ -9,7 +9,7 @@ class Reserva
 		private string $data_saida = "",
 		private $hospede = null,
 		private $funcionario = null,
-		private array $quarto = array()
+		private $quartos = []
 	){}
 	
 	// métodos GET
@@ -38,25 +38,40 @@ class Reserva
 		return $this -> funcionario;
 	}
 	
-	public function getQuarto()
+	public function getQuartos()
 	{
-		return $this -> quarto;
+		return $this -> quartos;
 	}
 	
 	// métodos SET
-	public function setDataReserva()
+	public function setDataReserva($data_reserva)
 	{
 		$this -> data_reserva = $data_reserva;
 	}
 	
-	public function setDataEntrada()
+	public function setDataEntrada($data_entrada)
 	{
 		$this -> data_entrada = $data_entrada;
 	}
 	
-	public function setDataSaida()
+	public function setDataSaida($data_saida)
 	{
 		$this -> data_saida = $data_saida;
+	}
+	
+	public function setHospede($hospede)
+	{
+		$this -> hospede = $hospede;
+	}
+	
+	public function setFuncionario($funcionario)
+	{
+		$this -> funcionario = $funcionario;
+	}
+	
+	public function setQuartos(array $quartos)
+	{
+		$this -> quartos[] = $quartos;
 	}
 }
 

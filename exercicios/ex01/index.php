@@ -14,8 +14,7 @@
 	$modelo = new Modelo("Motorola 4444");
 	$cliente = new Cliente("093.411.091-01", "Kaique", 14, "91144192");
 	$aparelho = new Aparelho("Celular", $modelo, $cliente);
-	$tecnico = new Tecnico("Conserto de celulares",
-	array(), "Marina", 14, "91255769");
+	$tecnico = new Tecnico("Conserto de celulares", array(), "Marina", 14, "91255769");
 	$tecnico -> setTelefone(14, "32334455");
 	$orcamento = new Orcamento(date("d/m/Y"), 150.60, "20/05/2025", $aparelho, $tecnico);
 	

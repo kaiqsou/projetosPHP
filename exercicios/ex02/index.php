@@ -1,49 +1,51 @@
 <?php
 
+	date_default_timezone_set("America/Sao_Paulo");
 	require_once "Pessoa.class.php";
 	require_once "Hospede.class.php";
 	require_once "Funcionario.class.php";
 	require_once "Hotel.class.php";
-	require_once "Quarto.class.php";
+	require_once "Quartos.class.php";
 	require_once "Reserva.class.php";
 	
-	$pessoa1 = new Pessoa("Gabriel");
-	$pessoa2 = new Pessoa("Yasmin");
+	$hospede = new Hospede("024.657.145-03", "Kaique");
+	$funcionario = new Funcionario("00234567", "Marina");
 	
-	$hospede1 = new Hospede("251.147.519-31", $pessoa1 -> getNome());
-	$funcionario1 = new Funcionario("00458972136", $pessoa2 -> getNome());
-	
-	$quarto12 = new Quarto(12, 1);
-	$quarto19 = new Quarto(19, 2);
-	$quarto24 = new Quarto(24, 3);
-	
-	$hotel = new Hotel("36.829.471/0001-05", "Hotel Habbo", [$quarto12, $quarto19, $quarto24]);
-	$reserva = new Reserva("02/05/2025", "07/05/2025", "08/05/2025", $hospede1, $funcionario1, [$quarto12]);
+	$hotel_h = new Hotel("12.345.678/0001-95", "Hotel Habbo");
+	$quarto11 = new Quartos(11, 1, $hotel_h);
+	$quarto15 = new Quartos(15, 2, $hotel_h);
+	$quarto19 = new Quartos(19, 2, $hotel_h);
 
-	// eu só não consegui puxar do $reserva os dados do Hotel!
-	echo "<strong>HOTEL<br></strong>"; 
-	echo "Razão social: {$hotel -> getRazaoSocial()}<br>";
-	echo "CNPJ: {$hotel -> getCnpj()}<br>";
-	echo "<br>";
+	$hotel_h -> setQuartos($quarto11, $quarto15);
 	
-	echo "<strong>HÓSPEDE<br></strong>"; 
-	echo "Nome: {$reserva -> getHospede() -> getNome()}<br>";
-	echo "CPF: {$reserva -> getHospede() -> getCpf()}<br>";
+	$reservaK = new Reserva(date("d/m/Y"), "21/05/2025", "26/05/2025", $hospede, $funcionario, [$quarto11, $quarto15]);
 	
-	echo "<strong><br>QUARTOS<br></strong>";
-	foreach($reserva -> getQuarto() as $dado)
+	$hospede -> setReserva($reservaK);
+	$quarto11 -> setReserva($reservaK);
+	$quarto15 -> setReserva($reservaK);
+	
+	echo "<strong><h2>RESERVA</h2></strong>"; 
+	echo "Data da Reserva: {$reservaK -> getDataReserva()}<br>";
+	echo "Data de Entrada: {$reservaK -> getDataEntrada()}<br>";
+	echo "Data de Saída: {$reservaK -> getDataSaida()}<br>";
+	
+	echo "<strong><h3>HÓSPEDE</h3></strong>"; 
+	echo "Nome: {$reservaK -> getHospede() -> getNome()}<br>";
+	echo "CNPJ: {$reservaK -> getHospede() -> getCpf()}<br>";
+	
+	echo "<strong><h3>QUARTOS</h3></strong>";
+	foreach ($reservaK -> getQuartos() as $quarto)
 	{
-		echo "Número: {$dado -> getNumero()}<br>";
-		echo "Andar: {$dado -> getAndar()}<br>";
+		echo "Andar: {$quarto -> getAndar()}<br>";
+		echo "Número: {$quarto -> getNumero()}<br>";
+		echo "Hotel: {$quarto -> getHotel() -> getRazaoSocial()}<br>";
+		echo "CNPJ: {$quarto -> getHotel() -> getCnpj()}<br><br>";
 	}
 	
-	echo "<strong><br>DADOS DA RESERVA<br></strong>";
-	echo "Data da Reserva: {$reserva -> getDataReserva()}<br>";
-	echo "Data de Entrada: {$reserva -> getDataEntrada()}<br>";
-	echo "Data de Saída: {$reserva -> getDataSaida()}<br>";
+	echo "<strong><h3>FUNCIONÁRIO(A)</h3></strong>";
+	echo "Nome: {$reservaK -> getFuncionario() -> getNome()}<br>";
+	echo "Carteira Profissional: {$reservaK -> getFuncionario() -> getCarteiraProfissional()}<br>";
+	echo "<br>";
 	
-	echo "<strong><br>FUNCIONÁRIO(A) RESPONSÁVEL<br></strong>";
-	echo "Nome: {$reserva -> getFuncionario() -> getNome()}<br>";
-	echo "Carteira Profissional: {$reserva -> getFuncionario() -> getCarteiraProfissional()}";
 	
 ?>

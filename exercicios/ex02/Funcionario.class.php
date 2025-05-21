@@ -17,20 +17,10 @@ class Funcionario extends Pessoa
 		return $this -> carteira_profissional;
 	}
 	
-	public function getNome()
-	{
-		return $this -> nome;
-	}
-	
 	// métodos SET
-	public function setCarteiraProfissional()
+	public function setCarteiraProfissional($carteira_profissional)
 	{
 		$this -> carteira_profissional = $carteira_profissional;
-	}
-	
-	public function setNome()
-	{
-		$this -> nome = $nome;
 	}
 }
 

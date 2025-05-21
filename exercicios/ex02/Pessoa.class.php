@@ -14,7 +14,7 @@ class Pessoa
 	}
 	
 	// métodos SET 
-	public function setNome()
+	public function setNome($nome)
 	{
 		$this -> nome = $nome;
 	}

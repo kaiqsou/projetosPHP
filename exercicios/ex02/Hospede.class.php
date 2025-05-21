@@ -5,7 +5,8 @@ class Hospede extends Pessoa
 	public function __construct
 	(
 		private string $cpf = "",
-		string $nome
+		string $nome,
+		private $reserva = null
 	)
 	{
 		parent :: __construct($nome);
@@ -17,20 +18,20 @@ class Hospede extends Pessoa
 		return $this -> cpf;
 	}
 	
-	public function getNome()
+	public function getReserva()
 	{
-		return $this -> nome;
+		return $this -> reserva;
 	}
 	
 	// métodos SET
-	public function setCpf()
+	public function setCpf($cpf)
 	{
 		$this -> cpf = $cpf;
 	}
 	
-	public function setNome()
+	public function setReserva($reserva)
 	{
-		$this -> nome = $nome;
+		$this -> reserva = $reserva;
 	}
 }
 

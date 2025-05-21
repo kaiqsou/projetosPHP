@@ -6,7 +6,11 @@ class Hotel
 	(
 		private string $cnpj = "",
 		private string $razao_social = "",
-		private array $quarto = array()
+		private $quartos = []
+	 /* método 2:
+		int $numero = 0,
+		int $andar = 0 
+	*/
 	){}
 	
 	// métodos GET
@@ -20,25 +24,25 @@ class Hotel
 		return $this -> razao_social;
 	}
 	
-	public function getQuarto()
+	public function getQuartos()
 	{
-		return $this -> quarto;
+		return $this -> quartos;
 	}
 	
 	// métodos SET
-	public function setCnpj()
+	public function setCnpj($cnpj)
 	{
 		$this -> cnpj = $cnpj;
 	}
 	
-	public function setRazaoSocial()
+	public function setRazaoSocial($razao_social)
 	{
 		$this -> razao_social = $razao_social;
 	}
 	
-	public function setQuarto($quarto)
+	public function setQuartos($quartos)
 	{
-		$this -> quarto[] = $quarto;
+		$this -> quartos[] = $quartos;
 	}
 }
 
