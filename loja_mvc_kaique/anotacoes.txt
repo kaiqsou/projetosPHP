@@ -1,0 +1,13 @@
+Para que funcione corretamente, precisa ter o banco de dados certinho (na aula da Vânia foi feito pelo PhP My Admin)
+
+- Entrar no PhP My Admin 
+- Criar um novo banco (com o mesmo nome da conexão feita na models/Conexao.class.php), com a primeira tabela sendo a de usuarios com as suas 5 colunas:
+
+    id_usuario: INT PRIMARY KEY AUTO_INCREMENT 
+    nome: VARCHAR(100) 
+    email: VARCHAR(100) 
+    senha: VARCHAR(100)
+    tipo: ENUM("Administrador", "Cliente")
+
+- Depois, ir até a nova tabela de 'usuarios' que acabou de criar no PhP My Admin e selecionar a aba de "Inserir"
+- Inserir os dados, com exceção do id_usuario que já é auto_increment
