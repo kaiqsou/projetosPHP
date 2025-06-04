@@ -20,10 +20,12 @@
 					// encontrou o usuário
 					echo "Login efetuado com sucesso.";
 					
-					session_start();
 					// salvando dados na sessão
 					$_SESSION["nome"] = $retorno[0] -> nome;
 					$_SESSION["tipo"] = $retorno[0] -> tipo;
+					
+					header("location: index.php");
+					die();
 				}
 				else 
 				{
@@ -32,6 +34,19 @@
 				}
 			}
 			require_once "views/login.php";
+		}
+		
+		public function logout()
+		{
+			if (!isset($_SESSION))
+			{
+				session_start();
+			}
+			
+			$_SESSION = array(); // pega toda a sessão num array 
+			session_destroy(); // destrói toda a sessão
+			header("location: index.php"); // redireciona após logout
+			die();
 		}
 	}
 

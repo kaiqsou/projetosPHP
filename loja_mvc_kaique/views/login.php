@@ -1,12 +1,17 @@
+<?php 
+	require_once "header.php"; 
+?>	
+
 <!DOCTYPE html>
 <html>
 
-<head> 
+<head>
 	<title>Loja - Login</title>
 	<meta charset="UTF-8">
 </head>
-	
-<body> 
+
+	<div class="content">
+	<div class="container">
 	<h1>Login</h1>
 	<br>
 	<form action="#" method="POST">
