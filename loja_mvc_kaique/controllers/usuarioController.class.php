@@ -21,6 +21,10 @@
 					echo "Login efetuado com sucesso.";
 					
 					// salvando dados na sessão
+					if (!$_SESSION)
+					{
+						session_start();
+					}
 					$_SESSION["nome"] = $retorno[0] -> nome;
 					$_SESSION["tipo"] = $retorno[0] -> tipo;
 					
