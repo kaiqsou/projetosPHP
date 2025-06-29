@@ -9,10 +9,11 @@
 			<form action="index.php?controle=avistamentoController&metodo=inserir" method="post">
 				<label for="data_avistamento">Data do Avistamento:</label>
 				<input type="date" name="data_avistamento" id="data_avistamento"><br><br>
-				
+				<p style="color: red; font-size: 15px;"><?php echo $msg[0] ?></p>
 				
 				<label for="local_avistamento">Local do Avistamento:</label>
 				<input type="text" name="local_avistamento" id="local_avistamento"><br><br>
+				<p style="color: red; font-size: 15px;"><?php echo $msg[1] ?></p>
 
 				<div class="mb-3">
 				<label for="animais" class="form-label">Animais:</label>
@@ -30,10 +31,10 @@
 						echo "<option value='{$dados->idanimais}'>{$dados->nome}</option>";
 					}
 				}
-						
 					?>
 				</select>
 				</div>
+				<p style="color: red; font-size: 15px;"><?php echo $msg[2] ?></p>
 				
 				<div class="mb-3">
 				<label for="perigo" class="form-label">Perigo:</label>

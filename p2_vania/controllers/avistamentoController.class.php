@@ -24,20 +24,44 @@
 		{
 			$animalDAO = new animalDAO();
 			$animais = $animalDAO -> buscar_animais();
+
+			$msg = ["", "", ""];
+			$erro = false;
 			
 			if ($_POST)
 			{
-                $avistamento = new Avistamento
-                ( 
-					0,
-					$_POST["animais"],
-					$_POST["data_avistamento"], 
-					$_POST["perigo"],
-					$_POST["local_avistamento"]
-                );
-					
-                $avistamentoDAO = new AvistamentoDAO();
-                $avistamentos = $avistamentoDAO -> inserir($avistamento);
+				if (empty($_POST["data_avistamento"]))
+				{
+					$msg[0] = "Por favor, selecione uma data";
+					$erro = true;
+				}
+
+				if (empty($_POST["local_avistamento"]))
+				{
+					$msg[1] = "Por favor, indique o local";
+					$erro = true;
+				}
+
+				if ($_POST["animais"] == 0)
+				{
+					$msg[2] = "Por favor, escolha um animal";
+					$erro = true;
+				}
+
+				if (!$erro)
+				{
+					$avistamento = new Avistamento
+					( 
+						0,
+						$_POST["animais"],
+						$_POST["data_avistamento"], 
+						$_POST["perigo"],
+						$_POST["local_avistamento"]
+					);
+						
+					$avistamentoDAO = new AvistamentoDAO();
+					$avistamentos = $avistamentoDAO -> inserir($avistamento);
+				}
 			}
 			require_once "views/form_avistamentos.php";
 		}
