@@ -1,0 +1,8 @@
+Fiz algumas alterações após a aula.
+
+1 - Criptografei a senha
+2 - Fiz o cadastro do usuário
+3 - Modifiquei o login e o método autenticação usuarioDAO
+4 - Alterei o login no usuarioController
+5 - alterei o inicioController para buscar os produtos e apresentar a tela inicial com eles.
+6 - para rodar o projeto, delete o banco de dados e crie novamente com o script que está na pasta Banco_dados. Para criar o usuário administrador com a senha criptografada, se não não funciona o login da maria.
